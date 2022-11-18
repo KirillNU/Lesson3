@@ -11,11 +11,17 @@
 Результат: 1,3,4
 '''
 
+#input_sequence = '1,2;3:4,5,6/6,7,9,45,31,5,31' - для тестирования
+list_of_unique_sets = []
 for i in range(2):
     input_sequence = input(f'Введите {i+1}-ю последовательность цифр, разделенные символами", ; : /" \n')
     formatted_sequence = input_sequence.replace(',', ' ').replace(';', ' ').replace(':', ' ').replace('/', ' ').split()
-    unique_set = set(formatted_sequence)
-print(input_sequence, type(input_sequence))
-#final_list = str(unique_set).replace('{', '').replace('}', '').replace('\'', '')
-#print(final_list)
+    list_of_unique_sets.append(set(formatted_sequence))
+
+x = list_of_unique_sets[0]
+y = list_of_unique_sets[1]
+x.difference_update(y)
+
+final_list = str(x).replace('{', '').replace('}', '').replace('\'', '')
+print(final_list)
 
