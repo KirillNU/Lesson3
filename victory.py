@@ -27,4 +27,10 @@ print(result) # [5, 1]
 
 import random
 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+result = random.sample(numbers, 5)
+
+print(result, type(result))
+
+
 print('victory.py')
