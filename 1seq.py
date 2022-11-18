@@ -23,7 +23,11 @@ while True:
 list_elements = []
 
 for i in range(cycle_count):
-    x = int(input(f'Введите {i+1}  элемент: '))
-    list_elements.append(x)
+    try:
+        x = int(input(f'Введите {i+1}  элемент: '))
+        list_elements.append(x)
+    except:
+        print(f'Эелемент {i+1} не число')
+
 print(sorted(list_elements))
 # print(list_elements.sort()) - не работает. Вопрос куратору - почему?
