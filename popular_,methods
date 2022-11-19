@@ -3,10 +3,8 @@
     * list.append(x), list.insert(i, x), list.count(x), list.pop([i]), list.sort()
 - dict:
     * dict.update([other]), dict.items(), dict.keys(), dict.values(), dict.get(key[, default])
-
 - set:
     * set.update(other, ...), set.difference_update(other, ...), set.add(elem), set.remove(elem),
     set.intersection_update(other, ...)
-
 - str:
     *  S.split(символ), f'S'- метод, все S.[l/r/s]strip([chars]), S.isdigit(), S.startswith(str),
