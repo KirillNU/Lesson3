@@ -8,4 +8,4 @@
     set.intersection_update(other, ...)
 
 - str:
-    *  s.find/replace(old, new, count), s.isdigit(), s.upper(), s.split(sep,maxsplit), s.[l/r/s]strip([chars])
+    *  s.find/replace(old, new, count), s.isdigit(), s.upper()/lower, s.split(sep,maxsplit), s.[l/r/s]strip([chars])
