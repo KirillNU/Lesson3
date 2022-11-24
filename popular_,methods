@@ -6,5 +6,6 @@
 - set:
     * set.update(other, ...), set.difference_update(other, ...), set.add(elem), set.remove(elem),
     set.intersection_update(other, ...)
+
 - str:
-    *  S.split(символ), f'S'- метод, все S.[l/r/s]strip([chars]), S.isdigit(), S.startswith(str),
+    *  s.find/replace(old, new, count), s.isdigit(), s.upper(), s.split(sep,maxsplit), s.[l/r/s]strip([chars])
