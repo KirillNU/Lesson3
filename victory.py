@@ -25,17 +25,38 @@ print(result) # [5, 1]
 В конце считаем количество правильных и неправильных ответов и предлагаем начать снова
 '''
 
-# import random
-#
-# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-# result = random.sample(numbers, 5)
-#
-# print(result, type(result))
-#
-#
-# print('victory.py')
-#
 
+
+
+# Джек Лондон - 22.11.1876
+# Бернард Шо - 26.07.1856
+# Илья Ильф - 15.10.1897
+# Евгений Петров - 13.12.1902
+# Михаил Жванецкий - 06.03.1934
+# Василий Аксёнов - 20.08.1932
+# Ромен Роллан - 29.01.1866
+# Михаил Булгаков - 15.05.1891
+# Аркадий Стругацкий - 28.07.1925
+# Борис Стругацкий - 15.04.1933
+
+
+
+
+
+# '''
+# j_lond = '1876' #Джек Лондон
+# b_shaw = '1856' #Бернард Шо
+# i_ilf = '1897' #Илья Ильф
+# e_petr = '1902' #Евгений Петров
+# m_jvan = '1934' #Михаил Жванецкий
+# v_akse = '1932' #Василий Аксёнов
+
+import random
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+writers = random.sample(numbers, 5)
+
+print(writers, type(writers))
 
 
 month_names = {'01': 'января', '02': 'февраля', '03': 'марта',
@@ -53,15 +74,15 @@ day_names = {'01': 'первое', '02': 'второе', '03': 'третье', '
              '27': 'двадцатьседьмое', '28': 'двадцатьвосьмое', '29': 'двадцатьдевятое',
              '30': 'тридцатое', '31': 'тридцатьпервое' }
 
-writers_dict = {'уear': '', 'day_dig': '', 'day_word': '', 'month_dig': '', 'month_word': ''}
+writers_dict = {'уear': '', 'day_dig': '', 'day_word': '', 'month_dig': '', 'month_word': '', 'name_genitive': ''}
 
 writers_list = []
 
 
 
-print(month_names)
-print(day_names)
-print(writers_dict)
+# print(month_names)
+# print(day_names)
+# print(writers_dict)
 
 # day_names =
 #
