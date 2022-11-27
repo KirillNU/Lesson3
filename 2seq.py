@@ -18,10 +18,10 @@ c. слэш (1,2,3 1;2;3 1/2/3),
 d. но только какой то один 1,2;3/4 - так нельзя
 '''
 
-input_sequence = '1,2;3:4,5,6/6,7,9,45,31,5,31'
+#input_sequence = '1,2;3:4,5,6/6,7,9,45,31,5,31'
 # Добавлены символы разделителей и пункт d. изменен - допускается комбинация разделителей
 
-#input_sequence = input('Введите последовательность цифр, разделенные символами", ; : /" \n')
+input_sequence = input('Введите последовательность цифр, разделенные символами", ; : /" \n')
 formatted_sequence = input_sequence.replace(',', ' ').replace(';', ' ').replace(':', ' ').replace('/', ' ').split()
 unique_set = set(formatted_sequence)
 final_list = str(unique_set).replace('{', '').replace('}', '').replace('\'', '')
