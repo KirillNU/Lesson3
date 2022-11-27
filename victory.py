@@ -124,7 +124,7 @@ while True:
     max_total = max_total + ans_total
     cycle_total += 1
 
-    more_attmpt = input('Попробуем еще раз? (Да/Нет) \n')
+    more_attmpt = input('Попробуем еще раз? Да/Нет \n')
 
     if more_attmpt != 'Да':
         print('За все циклы', cycle_total, '\n',
