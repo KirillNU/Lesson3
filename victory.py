@@ -25,9 +25,6 @@ print(result) # [5, 1]
 В конце считаем количество правильных и неправильных ответов и предлагаем начать снова
 '''
 
-
-
-
 # Джек Лондон - 22.11.1876
 # Бернард Шо - 26.07.1856
 # Илья Ильф - 15.10.1897
@@ -40,12 +37,6 @@ print(result) # [5, 1]
 # Борис Стругацкий - 15.04.1933
 
 import random
-
-max_good = 0
-max_bad = 0
-max_total = 0
-cycle_total = 0
-
 
 lond = {'by': '1876', 'day_dig': '22', 'day_word': 'двадцать второе',
         'month_dig': '11', 'month_word': 'ноября',
@@ -60,12 +51,12 @@ ilf = {'by': '1897', 'day_dig': '15', 'day_word': 'пятнадцатое',
        'name_genitive': 'И. Ильфа'}
 
 petr = {'by': '1902', 'day_dig': '13', 'day_word': 'тринадцатое',
-       'month_dig': '12', 'month_word': 'декабря',
-       'name_genitive': 'Е. Петрова'}
+        'month_dig': '12', 'month_word': 'декабря',
+        'name_genitive': 'Е. Петрова'}
 
 jvan = {'by': '1934', 'day_dig': '06', 'day_word': 'шестое',
-       'month_dig': '03', 'month_word': 'марта',
-       'name_genitive': 'М. Жванецкого'}
+        'month_dig': '03', 'month_word': 'марта',
+        'name_genitive': 'М. Жванецкого'}
 
 aks = {'by': '1932', 'day_dig': '20', 'day_word': 'двадцатое',
        'month_dig': '08', 'month_word': 'августа',
@@ -80,45 +71,68 @@ bul = {'by': '1891', 'day_dig': '15', 'day_word': 'пятнадцатое',
        'name_genitive': 'М. Булгакова'}
 
 astr = {'by': '1925', 'day_dig': '28', 'day_word': 'двадцать восьмое',
-       'month_dig': '07', 'month_word': 'июля',
-       'name_genitive': 'А. Стругацкого'}
+        'month_dig': '07', 'month_word': 'июля',
+        'name_genitive': 'А. Стругацкого'}
 
 bstr = {'by': '1933', 'day_dig': '15', 'day_word': 'пятнадцатое',
-       'month_dig': '04', 'month_word': 'апреля',
-       'name_genitive': 'Б. Стругацкого'}
+        'month_dig': '04', 'month_word': 'апреля',
+        'name_genitive': 'Б. Стругацкого'}
 
-writers_list = [lond, shaw, ilf, petr, jvan, aks, rol, bul, astr, bstr]
+writers_list = (lond, shaw, ilf, petr, jvan, aks, rol, bul, astr, bstr)
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-# while True:
-writers = random.sample(numbers, 5)
+max_good = 0
+max_bad = 0
+max_total = 0
+cycle_total = 0
 
-ans_good = 0
-ans_bad = 0
-ans_total = 0
+while True:
+    ans_good = 0
+    ans_bad = 0
+    ans_total = 0
 
-for selected in writers:
-    w_name = writers_list[selected-1].get('name_genitive')
-    d_dig = writers_list[selected-1].get('day_dig')
-    d_word = writers_list[selected-1].get('day_word')
-    m_dig = writers_list[selected-1].get('month_dig')
-    m_word = writers_list[selected - 1].get('month_word')
-    b_ye = writers_list[selected-1].get('by')
+    writers = random.sample(numbers, 5)
 
-    inp_date = input(f'Введите дату рождения {w_name} в формате ДД.ММ.ГГГГ > ')
+    for selected in writers:
+        w_name = writers_list[selected-1].get('name_genitive')
+        d_dig = writers_list[selected-1].get('day_dig')
+        d_word = writers_list[selected-1].get('day_word')
+        m_dig = writers_list[selected-1].get('month_dig')
+        m_word = writers_list[selected - 1].get('month_word')
+        b_ye = writers_list[selected-1].get('by')
 
-    if inp_date == f'{d_dig}.{m_dig}.{b_ye}':
-        ans_good += 1
-        ans_total += 1
-    else:
-        ans_bad += 1
-        ans_total += 1
-        print(f'Неверно. День рождения {w_name} {d_word} {m_word} {b_ye} года')
+        inp_date = input(f'Введите дату рождения {w_name} в формате ДД.ММ.ГГГГ > ')
 
-print(ans_good, ans_bad, ans_total, sep='|')
+        if inp_date == f'{d_dig}.{m_dig}.{b_ye}':
+            ans_good += 1
+            ans_total += 1
+        else:
+            ans_bad += 1
+            ans_total += 1
+            print(f'Неверно. День рождения {w_name} {d_word} {m_word} {b_ye} года')
 
-# while True:
-#     ans_good = 0
-#     ans_bad = 0
-#     ans_total = 0
+    print('За один цикл игры \n',
+          'Количество Правильных ответов:', ans_good, '\n',
+          'Количество Неправильных ответов:', ans_bad, '\n',
+          'Процент Правильных ответов:', (ans_good / ans_total) * 100, '% \n',
+          'Процент Неправильных ответов:', (ans_bad / ans_total) * 100, '% \n'
+          )
+
+    max_good = max_good + ans_good
+    max_bad = max_bad + ans_bad
+    max_total = max_total + ans_total
+    cycle_total += 1
+
+    more_attmpt = input('Попробуем еще раз? (Да/Нет) \n')
+
+    if more_attmpt != 'Да':
+        print('За все циклы', cycle_total, '\n',
+          'Общее Количество Правильных ответов:', max_good, '\n',
+          'Общее Количество Неправильных ответов:', max_bad, '\n',
+          'Общий Процент Правильных ответов:', (max_good / max_total) * 100, '% \n',
+          'Общий Процент Неправильных ответов:', (max_bad / max_total) * 100, '% \n'
+              )
+        break
+
+print('Закончили')
